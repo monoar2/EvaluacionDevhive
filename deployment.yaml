@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inmuebles-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: inmuebles
+  template:
+    metadata:
+      labels:
+        app: inmuebles
+    spec:
+      containers:
+        - name: inmuebles
+          image: test-inmuebles
+          ports:
+            - containerPort: 8080

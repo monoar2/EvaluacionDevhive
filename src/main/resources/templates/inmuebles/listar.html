@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listar Inmuebles</title>
+</head>
+<body>
+<h1>Listar Inmuebles</h1>
+<ul>
+    <li th:each="inmueble : ${inmuebles}">
+        <a th:href="@{/inmuebles/{id}(id=${inmueble.id})}">
+            <span th:text="${inmueble.nombre}"></span>
+        </a>
+    </li>
+</ul>
+</body>
